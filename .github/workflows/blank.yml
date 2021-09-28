@@ -7,8 +7,8 @@ jobs:
   hello:
     runs-on: self-hosted
     steps:
-      - shell: bash
+      - shell: pwsh
         env:
           SUPER_SECRET: ${{ secrets.SuperSecret }}
-          run: |
-            example-command "$SUPER_SECRET"
+        run: |
+          example-command "$env:SUPER_SECRET"
